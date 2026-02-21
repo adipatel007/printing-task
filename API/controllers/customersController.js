@@ -1,5 +1,6 @@
 const Customers = require('../models/customersModel');
 const bcrypt = require('bcrypt');
+const db = require('../config/db');
 
 exports.createCustomer = async (req, res) => {
     try {
@@ -263,4 +264,5 @@ exports.customerRegister = async (req, res) => {
         console.error('Error during customer registration:', err);
         res.status(500).json({ error: 'Internal server error' });
     }
+
 };
